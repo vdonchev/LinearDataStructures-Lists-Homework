@@ -39,6 +39,10 @@
                     {
                         currentLongestCount++;
                     }
+                    else
+                    {
+                        break;
+                    }
                 }
 
                 if (currentLongestCount > longestSequence)
