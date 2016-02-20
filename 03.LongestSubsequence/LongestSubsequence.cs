@@ -35,14 +35,12 @@
                 var currentLongestCount = 1;
                 for (int j = i + 1; j < nums.Count; j++)
                 {
-                    if (nums[j] == currentNum)
-                    {
-                        currentLongestCount++;
-                    }
-                    else
+                    if (nums[j] != currentNum)
                     {
                         break;
                     }
+
+                    currentLongestCount++;
                 }
 
                 if (currentLongestCount > longestSequence)
