@@ -24,7 +24,7 @@
             }
         }
 
-        private static IList<int> FindLongestSubsequence(IList<int> nums)
+        public static List<int> FindLongestSubsequence(IList<int> nums)
         {
             var longestSequence = int.MinValue;
             var startIndex = int.MinValue;

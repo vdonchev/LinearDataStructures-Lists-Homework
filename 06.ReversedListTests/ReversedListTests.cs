@@ -20,9 +20,9 @@
         {
             var reversedList = new ReversedList<int> { 1, 2, 3 };
 
-            reversedList.Remove(0);
+            reversedList.Remove(1);
 
-            var expectedAtIndexZero = 2;
+            var expectedAtIndexZero = 3;
             var expectedAtIndexOne = 1;
 
             Assert.AreEqual(expectedAtIndexZero, reversedList[0]);
@@ -45,6 +45,13 @@
             reversedList.Add(5);
 
             Assert.AreEqual(1, reversedList.Count);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Capacity_InvalidCapacity_ShouldThrow()
+        {
+            var reversedList = new ReversedList<int>(-2);
         }
 
         [TestMethod]
