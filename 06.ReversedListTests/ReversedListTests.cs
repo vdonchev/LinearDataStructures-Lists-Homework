@@ -1,6 +1,8 @@
 ﻿namespace _06.ReversedListTests
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ReversedList;
 
@@ -27,6 +29,21 @@
 
             Assert.AreEqual(expectedAtIndexZero, reversedList[0]);
             Assert.AreEqual(expectedAtIndexOne, reversedList[1]);
+        }
+
+        [TestMethod]
+        public void Remove_UsingForLoop_ShouldRemoveCorrectly()
+        {
+            var reversedList = new ReversedList<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            for (int i = 0; i < 5; i++)
+            {
+                reversedList.Remove(i);
+            }
+            
+            var expected = new List<int>() { 8, 6, 4, 2 };
+            var result = reversedList.ToArray();
+            CollectionAssert.AreEqual(expected, result);
         }
 
         [TestMethod]
