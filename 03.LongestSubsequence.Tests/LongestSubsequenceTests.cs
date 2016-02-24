@@ -55,7 +55,7 @@ namespace _03.LongestSubsequence.Tests
         [TestMethod]
         public void FindLongestSubsequence_1Element_ShouldReturnCorrectly()
         {
-            var list = new List<int>() { 1 }; // Should return empty list
+            var list = new List<int>() { 1 }; // Should return 1
 
             var expected = new List<int>() { 1 };
             var result = LongestSubsequence.FindLongestSubsequence(list);
